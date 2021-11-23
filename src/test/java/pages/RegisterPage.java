@@ -9,10 +9,10 @@ import org.openqa.selenium.support.PageFactory;
 public class RegisterPage {
     private WebDriver driver;
 
-    @FindBy(xpath="//*[@id=\"header\"]/div[3]/div/div/div[7]/ul/li/a")
+    @FindBy(xpath = "//*[@id=\"header\"]/div[3]/div/div/div[7]/ul/li/a")
     private WebElement sign_in;
 
-    @FindBy(xpath="//*[@id=\"email_create\"]")
+    @FindBy(xpath = "//*[@id=\"email_create\"]")
     private WebElement email;
 
     @FindBy(xpath = "//*[@id=\"SubmitCreate\"]")
@@ -27,7 +27,7 @@ public class RegisterPage {
     @FindBy(xpath = "//*[@id=\"customer_lastname\"]")
     private WebElement lastname;
 
-    @FindBy(xpath  = "//*[@id=\"passwd\"]")
+    @FindBy(xpath = "//*[@id=\"passwd\"]")
     private WebElement password;
 
     @FindBy(xpath = "//*[@id=\"submitAccount\"]")
@@ -36,17 +36,22 @@ public class RegisterPage {
     @FindBy(xpath = "//*[@id=\"center_column\"]/p[1]")
     private WebElement created_account;
 
-    public RegisterPage(WebDriver driver){
+    public RegisterPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-    public void createAccount(String e_mail){
+
+    public void signIn() {
         sign_in.click();
+    }
+
+    public void createAccount(String e_mail) {
         email.clear();
         email.sendKeys(e_mail);
         create_account_but.click();
     }
-    public void registerAccount(String first_name, String last_name, String passwd){
+
+    public void registerAccount(String first_name, String last_name, String passwd) {
         firstname.clear();
         firstname.sendKeys(first_name);
 
@@ -58,10 +63,12 @@ public class RegisterPage {
 
         register_but.click();
     }
-    public String registerPageInfo(){
+
+    public String registerPageInfo() {
         return register_information.getText();
     }
-    public String createdAccountInfo(){
+
+    public String createdAccountInfo() {
         return created_account.getText();
     }
 }

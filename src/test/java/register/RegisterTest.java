@@ -25,12 +25,12 @@ public class RegisterTest {
     @Test
     public void createNewAccountTest(){
         RegisterPage userRegister = new RegisterPage(driver);
-        userRegister.createAccount("nowak@op.com");
+        userRegister.signIn();
+        userRegister.createAccount("nowak123@op.com");
         Assert.assertEquals("YOUR PERSONAL INFORMATION",userRegister.registerPageInfo());
         userRegister.registerAccount("Nata", "Nowak", "nowak123");
         Assert.assertEquals("Your account has been created.", userRegister.createdAccountInfo());
     }
-
     @After
     public void tearDown(){
         driver.quit();
