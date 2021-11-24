@@ -1,4 +1,4 @@
-package login;
+package tests;
 
 import org.junit.After;
 import org.junit.Assert;
@@ -33,6 +33,6 @@ public class LogInTest {
     }
     @After
     public void tearDown(){
-        //driver.quit();
+        driver.quit();
     }
 }
