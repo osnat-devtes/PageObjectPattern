@@ -19,7 +19,7 @@ public class LogInTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        driver.get(" https://hotel-testlab.coderslab.pl/en/");
+        driver.get("https://hotel-testlab.coderslab.pl/en/");
     }
     @Test
     public void logInTest(){
@@ -33,6 +33,6 @@ public class LogInTest {
     }
     @After
     public void tearDown(){
-        driver.quit();
+        //driver.quit();
     }
 }

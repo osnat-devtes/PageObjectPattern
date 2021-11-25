@@ -57,9 +57,11 @@ public class LogInPage {
     public void signIn() {
         sign_in.click();
     }
+
     public String registeredPageInfo(){
         return already_registered.getText();
     }
+
     public void userLogIn(String email_login, String password_login){
         emailLogin.clear();
         emailLogin.sendKeys(email_login);
