@@ -26,14 +26,10 @@ public class AddingToBasketTest {
         AddingToBasketPage addingToBasketPage = new AddingToBasketPage(driver);
         addingToBasketPage.signIn();
         Assert.assertEquals("ALREADY REGISTERED?", addingToBasketPage.registeredPageInfo());
-        addingToBasketPage.userLogIn("nowak@op.com", "nowak123");
+        addingToBasketPage.userLogIn("nowak25@op.com", "nowak123");
         Assert.assertEquals("Welcome to your account. Here you can manage all of your personal information and orders.",
                               addingToBasketPage.loginPageInfo());
-        addingToBasketPage.clickAddresses();
-        addingToBasketPage.addNewAddress();
-        addingToBasketPage.setClientInfo("ul.Kwiatowa, 12/3", "60000", "Gdansk",
-               "123456789", "Address1");
-        Assert.assertEquals("Your addresses are listed below.", addingToBasketPage.yourAddressesInfo());
+
         addingToBasketPage.returnToMainPage();
         addingToBasketPage.searchHotel("Warsaw", "26-11-2021", "30-11-2021");
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);

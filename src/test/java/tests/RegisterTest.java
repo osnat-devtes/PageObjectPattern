@@ -26,13 +26,19 @@ public class RegisterTest {
     public void createNewAccountTest(){
         RegisterPage userRegister = new RegisterPage(driver);
         userRegister.signIn();
-        userRegister.createAccount("nowak123@op.com");
+        userRegister.createAccount("nowak25@op.com");
         Assert.assertEquals("YOUR PERSONAL INFORMATION",userRegister.registerPageInfo());
         userRegister.registerAccount("Nata", "Nowak", "nowak123");
         Assert.assertEquals("Your account has been created.", userRegister.createdAccountInfo());
+
+        userRegister.clickAddresses();
+        userRegister.addNewAddress();
+        userRegister.setClientInfo("ul.Kwiatowa, 12/3", "60000", "Gdansk",
+                "123456789", "Address1");
+        Assert.assertEquals("Your addresses are listed below.", userRegister.yourAddressesInfo());
     }
     @After
     public void tearDown(){
-        driver.quit();
+        //driver.quit();
     }
 }

@@ -26,7 +26,7 @@ public class LogInTest {
         LogInPage userLogin = new LogInPage(driver);
         userLogin.signIn();
         Assert.assertEquals("ALREADY REGISTERED?", userLogin.registeredPageInfo());
-        userLogin.userLogIn("nowak@op.com", "nowak123");
+        userLogin.userLogIn("nowak25@op.com", "nowak123");
         Assert.assertEquals("Welcome to your account. Here you can manage all of your personal information and orders.", userLogin.loginPageInfo());
         userLogin.returnToMainPage();
         userLogin.searchHotel("Warsaw", "26-11-2021", "30-11-2021");

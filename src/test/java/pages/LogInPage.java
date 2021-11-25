@@ -5,7 +5,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class LogInPage {
+public class LogInPage extends RegisterPage{
     private WebDriver driver;
 
     @FindBy(xpath = "//*[@id=\"header\"]/div[3]/div/div/div[7]/ul/li/a")
@@ -51,8 +51,7 @@ public class LogInPage {
     private WebElement search_hotel;
 
     public LogInPage(WebDriver driver){
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
     public void signIn() {
         sign_in.click();
