@@ -46,8 +46,14 @@ public class AddingToBasketPage extends LogInPage{
     @FindBy(xpath = "//*[@id=\"center_column\"]/div[1]/p[1]/strong")
     private WebElement checkingPhraseAddresses;
 
-    @FindBy(xpath = "//*[@id=\"advanced-payment\"]/div[3]/button")
-    private WebElement paymentButton;
+    @FindBy(xpath = "//*[@id=\"HOOK_PAYMENT\"]/div[1]/div/p/a/span")
+    private WebElement paymentByBankButton;
+
+    @FindBy(xpath = "//*[@id=\"cgv\"]")
+    private WebElement termsOfServiceCheck;
+
+    @FindBy(xpath = "//*[@id=\"cart_navigation\"]/button")
+    private WebElement orderConfirmationButton;
 
     public void roomsQuantityBook(String quantity){
         roomsQuantityInput.clear();
@@ -85,7 +91,13 @@ public class AddingToBasketPage extends LogInPage{
     public String yourAddressesInfo(){
         return checkingPhraseAddresses.getText();
     }
-    public void paymentAccept(){
-        paymentButton.click();
+    public void paymentChoice(){
+        paymentByBankButton.click();
+    }
+    public void termsOfService(){
+        termsOfServiceCheck.click();
+    }
+    public void confirmOrder(){
+        orderConfirmationButton.click();
     }
 }

@@ -39,6 +39,9 @@ public class AddingToBasketTest {
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         addingToBasketPage.roomsQuantityBook("2");
         addingToBasketPage.proceedToCheckout();
+        addingToBasketPage.termsOfService();
+        addingToBasketPage.paymentChoice();
+        addingToBasketPage.confirmOrder();
     }
     @After
     public void tearDown(){
