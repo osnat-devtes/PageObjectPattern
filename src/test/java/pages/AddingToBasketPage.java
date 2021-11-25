@@ -22,7 +22,7 @@ public class AddingToBasketPage extends LogInPage{
     @FindBy(xpath = "//*[@id=\"center_column\"]/div/div/ul/li[4]/a/span")
     private WebElement myAddressesButton;
 
-    @FindBy(xpath = "//*[@id=\"center_column\"]/div/a")
+    @FindBy(xpath = "//*[@id=\"center_column\"]/div/a/span")
     private WebElement addNewAddressButton;
 
     @FindBy(xpath = "//*[@id=\"address1\"]")
